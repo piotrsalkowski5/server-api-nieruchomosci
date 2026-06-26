@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vercel Node API Template</title>
+  </head>
+  <body>
+    <h1>Vercel Node API działa</h1>
+    <p>Sprawdź: <a href="/api/health">/api/health</a></p>
+
+    <button id="send">Test POST /api/contact</button>
+    <pre id="result"></pre>
+
+    <script>
+      document.getElementById('send').addEventListener('click', async () => {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: 'Jan',
+            phone: '123456789',
+            message: 'Test z frontendu'
+          })
+        });
+
+        const data = await res.json();
+        document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+      });
+    </script>
+  </body>
+</html>
