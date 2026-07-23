@@ -52,7 +52,7 @@ async function saveVisitor(input) {
 
   const [existing] = await sql`
     SELECT id
-    FROM announcements
+    FROM visitors
     WHERE ip = ${input.ip}
     LIMIT 1
   `;
@@ -62,7 +62,7 @@ async function saveVisitor(input) {
   }
 
   const [visitor] = await sql`
-    INSERT INTO announcements (
+    INSERT INTO visitors (
       ip,
       browser
     )
