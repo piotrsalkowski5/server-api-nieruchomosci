@@ -4,49 +4,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vercel Node API Template</title>
+  <title>API</title>
 </head>
 
 <body>
-  <h1>Vercel Node API działa</h1>
+  <!-- <h1>Vercel Node API działa</h1>
   <p>Sprawdź: <a href="/api/health">/api/health</a></p>
 
-  <button id="send">Test POST /api/contact</button>
   <button id="send2">Test POST /api/contact-person</button>
   <pre id="result"></pre>
 
-  <script>
-    document.getElementById('send').addEventListener('click', async () => {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: 'Jan',
-          phone: '123456789',
-          message: 'Test z frontendu'
-        })
-      });
+  <div>Email: <input type="email" id="email" name="email" /></div>
+  <div>Phone: <input type="text" id="phone" name="phone" /></div>
+  <div>Name: <input type="text" id="name" name="name" /></div>
+  <div>Message: <input type="text" id="message" name="mssage" /></div> -->
 
-      const data = await res.json();
-      document.getElementById('result').textContent = JSON.stringify(data, null, 2);
-    });
-
+  <!-- <script>
 
     document.getElementById('send2').addEventListener('click', async () => {
       const res = await fetch('/api/contact-person', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          name: 'Jan',
-          phone: '123456789',
-          message: 'Test z frontendu'
+          name: document.getElementById('name').value,
+          phone: document.getElementById('phone').value,
+          email: document.getElementById('email').value,
+          message: document.getElementById('message').value,
         })
       });
 
       const data = await res.json();
       document.getElementById('result').textContent = JSON.stringify(data, null, 2);
     });
-  </script>
+  </script> -->
 </body>
 
 </html>

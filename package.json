@@ -12,7 +12,8 @@
   },
   "dependencies": {
     "nodemailer": "^8.0.11",
-    "zod": "^4.4.3"
+    "zod": "^4.4.3",
+    "@neondatabase/serverless": "1.1.0"
   },
   "devDependencies": {
     "vercel": "latest"
