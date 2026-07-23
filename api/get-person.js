@@ -20,11 +20,15 @@ function setCors(req, res) {
 module.exports = async function handler(req, res) {
   setCors(req, res);
 
+  console.log("here");
+
+
   if (req.method === "OPTIONS") {
     return res.status(204).end();
   }
 
-  if (req.method !== "POST") {
+  
+  if (req.method !== "GET") {
     return res.status(405).json({
       error: "Method Not Allowed",
     });
